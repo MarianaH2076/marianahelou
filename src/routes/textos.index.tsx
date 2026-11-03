@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { z } from "zod";
 
+import livroImg from "@/assets/livro-aberto.jpg";
 import { ContactInvite, PostCard, PostMeta } from "@/components/site/Blocks";
 import { getCategories, getFeaturedPosts, getPosts } from "@/lib/content";
 import { cn } from "@/lib/utils";
@@ -57,6 +58,14 @@ function Textos() {
             </h2>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">{lead.excerpt}</p>
             <PostMeta post={lead} className="mt-8" />
+            <img
+              src={livroImg}
+              alt="Livro aberto sobre tecido verde-oliva"
+              width={1440}
+              height={1088}
+              loading="lazy"
+              className="mt-12 aspect-[16/9] w-full rounded-sm object-cover"
+            />
           </article>
           <div className="grid gap-10 md:col-span-4 md:col-start-9">
             {others.map((p) => (
