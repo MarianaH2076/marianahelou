@@ -25,6 +25,12 @@ export const site = {
   ] satisfies ContactChannel[],
 };
 
+/** Mariana's Substack: source of the "Textos" section. */
+export const substack = {
+  url: "https://marianahelou.substack.com",
+  feedUrl: "https://marianahelou.substack.com/feed",
+};
+
 export type AppPath =
   | "/"
   | "/sobre"

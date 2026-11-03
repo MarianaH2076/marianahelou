@@ -1,28 +1,22 @@
 /**
- * Content access layer. Routes read content only through these functions,
- * so the static modules in src/content can later be replaced by a CMS
- * (e.g. WordPress REST API) without touching page components.
+ * Content access layer. Routes read texts only through these functions.
+ * Texts ("Textos") come from Mariana's Substack RSS feed via a server function,
+ * because Substack does not allow the browser to read the feed directly (no CORS).
  */
-import { posts, type Post } from "@/content/posts";
+import { substack } from "@/content/site";
+import type { Post } from "./substack";
+import { getSubstackPosts } from "./substack.functions";
 
 export type { Post };
 
-export function getPosts(): Post[] {
-  return [...posts].sort((a, b) => b.date.localeCompare(a.date));
+/** Latest posts, newest first, plus an error flag when the feed could not be read. */
+export function loadPosts() {
+  return getSubstackPosts();
 }
 
-export function getFeaturedPosts(limit = 3): Post[] {
-  return getPosts()
-    .filter((p) => p.featured)
-    .slice(0, limit);
-}
-
-export function getPostBySlug(slug: string): Post | undefined {
-  return posts.find((p) => p.slug === slug);
-}
-
-export function getCategories(): string[] {
-  return Array.from(new Set(posts.map((p) => p.category)));
+/** Where a former internal article URL (/textos/<slug>) should send the reader. */
+export function substackArticleUrl(slug: string): string {
+  return `${substack.url}/p/${encodeURIComponent(slug)}`;
 }
 
 export function formatDate(iso: string): string {
