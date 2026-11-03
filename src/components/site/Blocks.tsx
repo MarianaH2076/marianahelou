@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
+import { substack } from "@/content/site";
 import { formatDate, type Post } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
@@ -89,29 +90,59 @@ export function ContactInvite({
 export function PostMeta({ post, className }: { post: Post; className?: string }) {
   return (
     <p className={cn("flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground", className)}>
-      <span className="eyebrow text-terracotta-deep">{post.category}</span>
+      <span className="eyebrow text-terracotta-deep">Substack</span>
       <span aria-hidden>·</span>
       <time dateTime={post.date}>{formatDate(post.date)}</time>
-      <span aria-hidden>·</span>
-      <span>{post.readingMinutes} min de leitura</span>
     </p>
+  );
+}
+
+/** Link to the article on Substack (opens in a new tab). */
+export function PostLink({ post, className }: { post: Post; className?: string }) {
+  return (
+    <a href={post.url} target="_blank" rel="noopener noreferrer" className={className}>
+      {post.title}
+      <span className="sr-only"> (abre no Substack, em nova aba)</span>
+    </a>
   );
 }
 
 export function PostCard({ post, large = false }: { post: Post; large?: boolean }) {
   return (
-    <article className="group flex h-full flex-col border-t border-foreground/80 pt-6">
+    <article className="group relative flex h-full flex-col border-t border-foreground/80 pt-6">
       <PostMeta post={post} />
       <h3 className={cn("mt-4 transition-colors group-hover:text-terracotta", large ? "text-3xl md:text-4xl" : "text-2xl")}>
-        <Link to="/textos/$slug" params={{ slug: post.slug }} className="after:absolute after:inset-0 relative">
-          {post.title}
-        </Link>
+        <PostLink post={post} className="after:absolute after:inset-0" />
       </h3>
-      <p className="mt-4 text-muted-foreground">{post.excerpt}</p>
-      <span className="mt-auto pt-6 text-sm font-medium text-foreground">
-        <span className="link-underline">Ler texto</span> →
+      {post.excerpt && <p className="mt-4 text-muted-foreground">{post.excerpt}</p>}
+      <span className="mt-auto pt-6 text-sm font-medium text-foreground" aria-hidden>
+        <span className="link-underline">Ler no Substack</span> ↗
       </span>
     </article>
+  );
+}
+
+/** Friendly fallback when the Substack feed is unavailable or still empty. */
+export function FeedNotice({ unavailable, className }: { unavailable: boolean; className?: string }) {
+  return (
+    <div className={cn("rounded-sm border border-dashed border-foreground/30 p-8 md:p-10", className)} role="status">
+      <p className="font-display text-2xl">
+        {unavailable ? "Não foi possível carregar os textos agora." : "Os primeiros textos estão a caminho."}
+      </p>
+      <p className="mt-3 max-w-xl text-muted-foreground">
+        {unavailable
+          ? "Enquanto isso, você pode ler todas as publicações diretamente no Substack."
+          : "As publicações aparecem aqui automaticamente assim que forem lançadas no Substack."}
+      </p>
+      <a
+        href={substack.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-block text-sm font-medium link-underline"
+      >
+        Ir para o Substack ↗
+      </a>
+    </div>
   );
 }
 
