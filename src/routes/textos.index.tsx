@@ -1,4 +1,5 @@
 import { createFileRoute, useRouter } from "@tanstack/react-router";
+import type { ReactNode } from "react";
 
 import livroImg from "@/assets/livro-aberto.jpg";
 import { ContactInvite, FeedNotice, PostCard, PostLink, PostMeta } from "@/components/site/Blocks";
@@ -30,7 +31,7 @@ export const Route = createFileRoute("/textos/")({
   component: Textos,
 });
 
-function TextosShell({ children }: { children: React.ReactNode }) {
+function TextosShell({ children }: { children: ReactNode }) {
   return (
     <div className="area-textos">
       <section className="border-b border-border">
