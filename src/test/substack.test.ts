@@ -71,8 +71,12 @@ describe("Feed unavailable", () => {
   it("keeps showing the last texts it managed to load", async () => {
     const ok = vi.fn().mockResolvedValue(new Response(realFeed, { status: 200 }));
     await loadSubstackFeed("https://example.test/feed", ok);
+    // Move past the 15-minute cache so the next call really hits the (failing) feed.
+    const later = Date.now() + 16 * 60 * 1000;
+    vi.spyOn(Date, "now").mockReturnValue(later);
     const failing = vi.fn().mockResolvedValue(new Response("", { status: 503 }));
     const result = await loadSubstackFeed("https://example.test/feed", failing);
+    expect(failing).toHaveBeenCalledOnce();
     expect(result.error).toBeNull();
     expect(result.posts).toHaveLength(1);
   });
