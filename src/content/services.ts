@@ -129,7 +129,7 @@ export const tdah = {
   ],
   details: [
     { label: "Metodologia", value: "[Descrição da metodologia — a preencher]" },
-    { label: "Formato", value: "[Online ou presencial, individual" },
+    { label: "Formato", value: "Online ou presencial, individual" },
     { label: "Duração", value: "Cada encontro tem duração de 50 minutos e a duração do acompanhamento em si é acordada individualmente" },
     { label: "Para quem", value: "Adultos com diagnóstico ou suspeita de TDAH que já estejam em terapia" },
     // { label: "Informações práticas", value: "[Valores, agendamento e outros detalhes — a preencher]" },

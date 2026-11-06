@@ -3,12 +3,14 @@ import { ArrowRight } from "lucide-react";
 
 import heroImg from "@/assets/hero-vaso.jpg";
 import livroImg from "@/assets/livro-aberto.jpg";
-import { ContactInvite, PostCard, PortraitPlaceholder } from "@/components/site/Blocks";
+import { ContactInvite, FeedNotice, PostCard, PortraitPlaceholder } from "@/components/site/Blocks";
 import { Button } from "@/components/ui/button";
 import { areas } from "@/content/services";
-import { getFeaturedPosts } from "@/lib/content";
+import { loadPosts } from "@/lib/content";
 
 export const Route = createFileRoute("/")({
+  loader: () => loadPosts(),
+  staleTime: 10 * 60 * 1000,
   head: () => ({
     meta: [
       { title: "Mariana Helou | Psicóloga — psicoterapia, TDAH e projetos" },
@@ -27,11 +29,25 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary" },
     ],
   }),
+  errorComponent: () => (
+    <div className="container-editorial py-32 text-center">
+      <h1 className="text-4xl">Não foi possível carregar a página agora.</h1>
+      <a href="/" className="mt-8 inline-block link-underline">
+        Tentar novamente
+      </a>
+    </div>
+  ),
+  notFoundComponent: () => (
+    <div className="container-editorial py-32 text-center">
+      <h1 className="text-4xl">Página não encontrada</h1>
+    </div>
+  ),
   component: Index,
 });
 
 function Index() {
-  const featured = getFeaturedPosts(3);
+  const { posts, error } = Route.useLoaderData();
+  const featured = posts.slice(0, 3);
 
   return (
     <>
@@ -148,11 +164,15 @@ function Index() {
               />
             </div>
           </div>
-          <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
-            {featured.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
-          </div>
+          {featured.length > 0 ? (
+            <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
+              {featured.map((post) => (
+                <PostCard key={post.url} post={post} />
+              ))}
+            </div>
+          ) : (
+            <FeedNotice unavailable={Boolean(error)} className="mt-16" />
+          )}
           <div className="mt-14">
             <Button asChild variant="editorial" size="pill">
               <Link to="/textos">
