@@ -3,14 +3,12 @@ import { ArrowRight } from "lucide-react";
 
 import heroImg from "@/assets/hero-vaso.jpg";
 import livroImg from "@/assets/livro-aberto.jpg";
-import { ContactInvite, FeedNotice, PostCard, PortraitPlaceholder } from "@/components/site/Blocks";
+import { ContactInvite, PostCard, PortraitPlaceholder } from "@/components/site/Blocks";
 import { Button } from "@/components/ui/button";
 import { areas } from "@/content/services";
-import { loadPosts } from "@/lib/content";
+import { getFeaturedPosts } from "@/lib/content";
 
 export const Route = createFileRoute("/")({
-  loader: () => loadPosts(),
-  staleTime: 10 * 60 * 1000,
   head: () => ({
     meta: [
       { title: "Mariana Helou | Psicóloga — psicoterapia, TDAH e projetos" },
@@ -23,31 +21,17 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Um espaço para compreender, elaborar e construir novas possibilidades — na clínica, no acompanhamento de pessoas com TDAH e em experiências coletivas.",
+          "Um espaço para compreender, elaborar e construir novas possibilidades seja na clínica, no acompanhamento de pessoas com TDAH ou em experiências coletivas.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
   }),
-  errorComponent: () => (
-    <div className="container-editorial py-32 text-center">
-      <h1 className="text-4xl">Não foi possível carregar a página agora.</h1>
-      <a href="/" className="mt-8 inline-block link-underline">
-        Tentar novamente
-      </a>
-    </div>
-  ),
-  notFoundComponent: () => (
-    <div className="container-editorial py-32 text-center">
-      <h1 className="text-4xl">Página não encontrada</h1>
-    </div>
-  ),
   component: Index,
 });
 
 function Index() {
-  const { posts, error } = Route.useLoaderData();
-  const featured = posts.slice(0, 3);
+  const featured = getFeaturedPosts(3);
 
   return (
     <>
@@ -68,7 +52,7 @@ function Index() {
             <p className="measure text-lg text-muted-foreground">
               Sou psicóloga e meu trabalho acontece em diferentes frentes: a psicoterapia
               individual, o acompanhamento para pessoas com TDAH e atividades educativas e
-              coletivas — modos distintos de cuidar, pensar e aprender junto.
+              coletivas: modos distintos de cuidar, pensar e aprender junto.
             </p>
             <Button asChild variant="editorial" size="pill">
               <Link to="/contato">
@@ -126,7 +110,7 @@ function Index() {
         <div className="md:col-span-7 md:col-start-6">
           <p className="eyebrow text-terracotta">Apresentação</p>
           <h2 className="mt-5 text-4xl md:text-5xl">
-            A psicologia como prática de escuta — no consultório e fora dele.
+            A psicologia como prática de escuta, tanto no consultório quanto fora dele.
           </h2>
           <div className="mt-8 space-y-5 text-lg text-muted-foreground">
             <p>
@@ -164,15 +148,11 @@ function Index() {
               />
             </div>
           </div>
-          {featured.length > 0 ? (
-            <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
-              {featured.map((post) => (
-                <PostCard key={post.url} post={post} />
-              ))}
-            </div>
-          ) : (
-            <FeedNotice unavailable={Boolean(error)} className="mt-16" />
-          )}
+          <div className="mt-16 grid gap-12 md:grid-cols-3 md:gap-10">
+            {featured.map((post) => (
+              <PostCard key={post.slug} post={post} />
+            ))}
+          </div>
           <div className="mt-14">
             <Button asChild variant="editorial" size="pill">
               <Link to="/textos">

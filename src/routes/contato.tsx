@@ -52,7 +52,7 @@ function Contato() {
             Toda conversa começa com <em className="text-olive">uma primeira palavra.</em>
           </h1>
           <p className="measure mt-8 text-lg text-muted-foreground md:text-xl">
-            Escreva do jeito que for possível — curto, longo, com dúvidas ou com certezas. Respondo
+            Escreva do jeito que for possível: curto, longo, com dúvidas ou com certezas. Respondo
             com calma e atenção.
           </p>
         </div>
@@ -86,7 +86,7 @@ function Contato() {
             <p className="eyebrow text-mustard">Canais</p>
             <h2 className="mt-5 text-4xl md:text-5xl">Onde me encontrar</h2>
             <p className="mt-6 text-paper/75">
-              Ao escrever, conte brevemente qual dos caminhos acima te interessa — isso ajuda a
+              Ao escrever, conte brevemente qual dos caminhos acima te interessa, isso ajuda a
               responder melhor.
             </p>
           </div>
@@ -123,8 +123,7 @@ function Contato() {
           <Editable text={site.crp} /> · <Editable text={site.location} />
         </p>
         <p className="mt-2 max-w-2xl">
-          Este site não é um canal de atendimento de urgência. Em situações de crise, procure o CVV
-          (ligue 188) ou um serviço de saúde mais próximo.
+          Este site não é um canal de atendimento de urgência. Em situações de crise, procure um serviço de saúde mais próximo.
         </p>
       </section>
     </>

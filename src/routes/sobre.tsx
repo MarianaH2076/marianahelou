@@ -73,7 +73,7 @@ function Sobre() {
         eyebrow="Sobre mim"
         title={
           <>
-            Psicóloga, leitora, escritora — e alguém que acredita no <em className="text-terracotta">encontro</em>.
+            Psicóloga, leitora, escritora, e alguém que acredita no <em className="text-terracotta">encontro</em>.
           </>
         }
         lead="Meu trabalho se desdobra entre a clínica, o acompanhamento de pessoas com TDAH e projetos que levam a psicologia para espaços coletivos."
@@ -98,8 +98,8 @@ function Sobre() {
           </p>
 
           <div className="space-y-14 pt-12">
-            <Timeline title="Formação acadêmica" items={formacao} />
-            <Timeline title="Experiência profissional" items={experiencia} />
+            {/* <Timeline title="Formação acadêmica" items={formacao} />
+            <Timeline title="Experiência profissional" items={experiencia} /> */}
           </div>
         </div>
       </section>
@@ -138,7 +138,7 @@ function Sobre() {
         </div>
         <div className="space-y-5 text-lg text-muted-foreground md:col-span-6 md:col-start-7">
           <p>
-            Penso a psicologia em diálogo com outras áreas — a literatura, a educação, a vida em
+            Penso a psicologia em diálogo com outras áreas: a literatura, a educação, a vida em
             comunidade. Esse olhar mais amplo atravessa tanto a clínica quanto os projetos coletivos.
           </p>
           <p>
