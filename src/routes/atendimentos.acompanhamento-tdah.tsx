@@ -12,7 +12,7 @@ export const Route = createFileRoute("/atendimentos/acompanhamento-tdah")({
       {
         name: "description",
         content:
-          "Um serviço próprio para pessoas com TDAH: compreender necessidades, atravessar desafios do cotidiano e construir formas sustentáveis de organizar a vida.",
+          "Um serviço próprio para pessoas com TDAH que ajuda a compreender necessidades, atravessar desafios do cotidiano e construir formas sustentáveis de organizar a vida.",
       },
       { property: "og:title", content: "Acompanhamento para pessoas com TDAH | Mariana Helou" },
       {
@@ -49,8 +49,8 @@ function AcompanhamentoTdah() {
         <div className="grid gap-12 md:grid-cols-12">
           <SectionHeading eyebrow="Foco do trabalho" title="O que esse acompanhamento propõe" className="md:col-span-5" />
           <p className="text-lg text-muted-foreground md:col-span-6 md:col-start-7">
-            Um trabalho próximo do cotidiano, que parte da sua experiência concreta — do que
-            funciona, do que trava e do que você gostaria que fosse diferente.
+            Um trabalho próximo do cotidiano que parte da sua experiência concreta sobre o que
+            funciona, o que te trava e o que você gostaria que fosse diferente.
           </p>
         </div>
         <ul className="mt-14 grid gap-px overflow-hidden rounded-sm bg-border sm:grid-cols-2 lg:grid-cols-4">

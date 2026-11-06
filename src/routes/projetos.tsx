@@ -72,7 +72,7 @@ function Projetos() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-card">
+      {/* <section className="border-t border-border bg-card">
         <div className="container-editorial py-20 md:py-28">
           <SectionHeading eyebrow="Agenda e arquivo" title="Projetos, encontros e registros" />
           <div className="mt-14 space-y-16">
@@ -108,7 +108,7 @@ function Projetos() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <ContactInvite
         title="Vamos criar algo juntos?"

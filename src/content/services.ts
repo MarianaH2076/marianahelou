@@ -52,9 +52,9 @@ export const areas: AreaSummary[] = [
 
 export const psicoterapia = {
   intro:
-    "A psicoterapia individual é um encontro regular entre você e uma psicóloga, em que há tempo e cuidado para falar, escutar e pensar sobre o que se vive. Não há respostas prontas: há um processo construído junto.",
+    "A psicoterapia individual é um encontro regular entre você e uma psicóloga, em que há tempo e cuidado para falar, escutar e pensar sobre o que se vive. Não há respostas prontas, mas sim um processo construído junto.",
   whatIs: [
-    "Psicoterapia é um trabalho de escuta e de elaboração. A partir da fala, aquilo que parecia confuso, repetitivo ou difícil de nomear vai ganhando forma — e, com o tempo, outras possibilidades começam a aparecer.",
+    "Psicoterapia é um trabalho de escuta e de elaboração. A partir da fala, aquilo que parecia confuso, repetitivo ou difícil de nomear vai ganhando forma e, com o tempo, outras possibilidades começam a aparecer.",
     "É um espaço para adultos que atravessam momentos de mudança, sofrimento, dúvidas ou que simplesmente desejam se conhecer melhor.",
   ],
   process: [
@@ -64,7 +64,7 @@ export const psicoterapia = {
     },
     {
       title: "Elaboração",
-      text: "Ao longo dos encontros, sentidos são construídos, revistos e reorganizados — no ritmo de quem está em terapia.",
+      text: "Ao longo dos encontros, sentidos são construídos, revistos e reorganizados, sempre no ritmo de quem está em terapia.",
     },
     {
       title: "Continuidade",
@@ -72,7 +72,7 @@ export const psicoterapia = {
     },
   ],
   firstSession: [
-    "Um primeiro encontro para nos conhecermos e entendermos o que te traz.",
+    "Um primeiro encontro para nos conhecermos e entendermos o que te traz aqui.",
     "Espaço para suas perguntas sobre o funcionamento da terapia.",
     "Combinados iniciais: frequência, horários, valores e formato.",
     "[Informações adicionais sobre a primeira sessão — a preencher]",
@@ -80,18 +80,18 @@ export const psicoterapia = {
   formats: [
     {
       title: "Online",
-      text: "[Plataforma, horários disponíveis e orientações para o atendimento online — a preencher]",
+      // text: "[Plataforma, horários disponíveis e orientações para o atendimento online — a preencher]",
     },
     {
       title: "Presencial",
-      text: "[Endereço do consultório, bairro e horários disponíveis — a preencher]",
+      text: "Brasília/DF, Asa Norte",
     },
   ],
   practical: [
     { label: "Público", value: "Adultos" },
-    { label: "Duração da sessão", value: "[a definir]" },
-    { label: "Frequência", value: "[a definir]" },
-    { label: "Valores e convênios", value: "[a definir]" },
+    { label: "Duração da sessão", value: "50 minutos" },
+    // { label: "Frequência", value: "[a definir]" },
+    // { label: "Valores e convênios", value: "[a definir]" },
   ],
 };
 
@@ -103,7 +103,7 @@ export const tdah = {
   distinction:
     "Este acompanhamento não é psicoterapia individual. É um serviço distinto, com objetivos, formato e dinâmica próprios.",
   intro:
-    "Um espaço prático e colaborativo para pessoas com TDAH que desejam compreender melhor as próprias necessidades, lidar com os desafios do cotidiano e construir maneiras mais possíveis — e mais suas — de organizar a vida.",
+    "Um espaço prático e colaborativo para pessoas com TDAH que desejam compreender melhor as próprias necessidades, lidar com os desafios do cotidiano e construir maneiras mais possíveis de organizar a vida.",
   focus: [
     {
       title: "Compreender necessidades",
@@ -119,7 +119,7 @@ export const tdah = {
     },
     {
       title: "Sustentar no tempo",
-      text: "Construir formas de organização que caibam na vida real — flexíveis, possíveis e respeitosas com quem você é.",
+      text: "Construir formas de organização que caibam na vida real: flexíveis, possíveis e respeitosas com quem você é.",
     },
   ],
   principles: [
@@ -129,10 +129,10 @@ export const tdah = {
   ],
   details: [
     { label: "Metodologia", value: "[Descrição da metodologia — a preencher]" },
-    { label: "Formato", value: "[Online, presencial, individual — a preencher]" },
-    { label: "Duração", value: "[Duração dos encontros e do acompanhamento — a preencher]" },
-    { label: "Para quem", value: "[Critérios e público do acompanhamento — a preencher]" },
-    { label: "Informações práticas", value: "[Valores, agendamento e outros detalhes — a preencher]" },
+    { label: "Formato", value: "[Online ou presencial, individual" },
+    { label: "Duração", value: "Cada encontro tem duração de 50 minutos e a duração do acompanhamento em si é acordada individualmente" },
+    { label: "Para quem", value: "Adultos com diagnóstico ou suspeita de TDAH que já estejam em terapia" },
+    // { label: "Informações práticas", value: "[Valores, agendamento e outros detalhes — a preencher]" },
   ],
 };
 
@@ -155,7 +155,7 @@ export const projectKinds: ProjectKind[] = [
   {
     id: "palestras",
     title: "Palestras",
-    text: "Falas sobre psicologia e saúde mental pensadas para o contexto e as perguntas de cada público.",
+    text: "Falas sobre psicologia e saúde mental, pensadas para o contexto e as perguntas de cada público.",
     audience: "Escolas, organizações e eventos",
   },
   {

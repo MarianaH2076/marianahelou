@@ -105,9 +105,14 @@ function Psicoterapia() {
             {p.formats.map((f) => (
               <div key={f.title} className="rounded-sm bg-area-soft p-6">
                 <p className="eyebrow text-area-ink">{f.title}</p>
-                <p className="mt-3 text-sm">
+                {f.text && (
+                  <p className="mt-3 text-sm">
+                      <Editable text={f.text} />
+                  </p>
+                )}
+                {/* <p className="mt-3 text-sm">
                   <Editable text={f.text} />
-                </p>
+                </p> */}
               </div>
             ))}
           </div>

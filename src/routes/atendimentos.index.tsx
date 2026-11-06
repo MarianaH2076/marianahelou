@@ -16,7 +16,7 @@ export const Route = createFileRoute("/atendimentos/")({
       { property: "og:title", content: "Atendimentos | Mariana Helou" },
       {
         property: "og:description",
-        content: "Psicoterapia individual e acompanhamento para pessoas com TDAH — dois serviços, dois propósitos.",
+        content: "Psicoterapia individual e acompanhamento para pessoas com TDAH: dois serviços, dois propósitos.",
       },
     ],
   }),
@@ -30,7 +30,7 @@ function Atendimentos() {
       <PageIntro
         eyebrow="Atendimentos"
         title="Dois serviços, dois propósitos."
-        lead="A psicoterapia individual e o acompanhamento para pessoas com TDAH são trabalhos diferentes, com objetivos, formatos e dinâmicas próprios. Conheça cada um para escolher o que faz sentido para você."
+        lead="A psicoterapia individual e o acompanhamento para pessoas com TDAH são trabalhos diferentes, com objetivos, formatos e dinâmicas próprios. Conheça cada um para entender o que faz sentido para você."
       />
       <section className="container-editorial grid gap-8 py-20 md:grid-cols-2 md:py-28">
         {services.map((s) => (
