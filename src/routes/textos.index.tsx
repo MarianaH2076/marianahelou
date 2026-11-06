@@ -39,7 +39,7 @@ function TextosShell({ children }: { children: ReactNode }) {
           <p className="eyebrow text-terracotta">Textos</p>
           <h1 className="mt-6 text-6xl md:text-[7rem] md:leading-none">Textos</h1>
           <p className="measure mt-8 text-lg text-muted-foreground md:text-xl">
-            Escritos sobre a vida cotidiana, a clínica, o TDAH e a saúde mental — para ler com calma.
+            Escritos sobre a vida cotidiana, a clínica, o TDAH e a saúde mental, para ler com calma.
           </p>
         </div>
       </section>
