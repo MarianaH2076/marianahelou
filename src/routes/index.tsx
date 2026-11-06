@@ -25,6 +25,8 @@ export const Route = createFileRoute("/")({
         content:
           "Um espaço para compreender, elaborar e construir novas possibilidades — na clínica, no acompanhamento de pessoas com TDAH e em experiências coletivas.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   errorComponent: () => (
