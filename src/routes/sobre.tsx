@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { ContactInvite, PageIntro, PortraitPlaceholder } from "@/components/site/Blocks";
 import { Editable } from "@/components/site/Editable";
+import retratoImg from "@/assets/foto-pessoal.jpg";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({
@@ -81,9 +82,7 @@ function Sobre() {
 
       <section className="container-editorial grid gap-14 py-20 md:grid-cols-12 md:py-28">
         <div className="md:col-span-5">
-          <div className="md:sticky md:top-28">
-            <PortraitPlaceholder />
-          </div>
+          <PortraitPlaceholder src={retratoImg} alt="Mariana Helou, psicóloga" />
         </div>
         <div className="space-y-6 text-lg md:col-span-6 md:col-start-7">
           <p className="eyebrow text-terracotta">Apresentação</p>

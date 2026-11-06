@@ -147,7 +147,22 @@ export function FeedNotice({ unavailable, className }: { unavailable: boolean; c
 }
 
 /* Clearly marked placeholder frame for photography still to be provided. */
-export function PortraitPlaceholder({ label = "Espaço para retrato profissional" }: { label?: string }) {
+export function PortraitPlaceholder({
+  label = "Espaço para retrato profissional",
+  src,
+  alt = "",
+}: {
+  label?: string;
+  src?: string;
+  alt?: string;
+}) {
+  if (src) {
+    return (
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-sand">
+        <img src={src} alt={alt} className="size-full object-cover object-top" loading="lazy" />
+      </div>
+    );
+  }
   return (
     <div className="grain relative flex aspect-[4/5] w-full items-end overflow-hidden rounded-sm bg-sand">
       <div className="absolute inset-6 rounded-sm border border-dashed border-charcoal/30" aria-hidden />

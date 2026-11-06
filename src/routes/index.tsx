@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 import heroImg from "@/assets/hero-vaso.jpg";
 import livroImg from "@/assets/livro-aberto.jpg";
+import retratoImg from "@/assets/foto-pessoal.jpg";
 import { ContactInvite, FeedNotice, PostCard, PortraitPlaceholder } from "@/components/site/Blocks";
 import { Button } from "@/components/ui/button";
 import { areas } from "@/content/services";
@@ -120,8 +121,8 @@ function Index() {
 
       {/* Introduction */}
       <section className="container-editorial grid gap-12 py-24 md:grid-cols-12 md:py-32">
-        <div className="md:col-span-4">
-          <PortraitPlaceholder />
+        <div className="md:col-span-5">
+          <PortraitPlaceholder src={retratoImg} alt="Mariana Helou, psicóloga" />
         </div>
         <div className="md:col-span-7 md:col-start-6">
           <p className="eyebrow text-terracotta">Apresentação</p>
