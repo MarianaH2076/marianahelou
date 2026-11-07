@@ -41,7 +41,7 @@ function Projetos() {
             A psicologia também acontece <em className="text-terracotta">em roda.</em>
           </>
         }
-        lead="Iniciativas coletivas e educativas que abrem espaço para conversar, aprender e pensar a saúde mental junto — com pessoas, comunidades, escolas, organizações e empresas."
+        lead="Iniciativas coletivas e educativas que abrem espaço para conversar, aprender e pensar a saúde mental junto com pessoas, comunidades, escolas, organizações e empresas."
       />
 
       <section className="container-editorial pt-16 md:pt-24">

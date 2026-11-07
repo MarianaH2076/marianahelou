@@ -38,7 +38,7 @@ const experiencia = [
 const valores = [
   { titulo: "Escuta", texto: "Dar tempo e lugar para que cada pessoa seja ouvida na sua singularidade." },
   { titulo: "Ética", texto: "Sigilo, responsabilidade e cuidado como fundamentos de qualquer encontro." },
-  { titulo: "Respeito à diferença", texto: "Acolher modos diversos de pensar, sentir e funcionar — incluindo a neurodivergência." },
+  { titulo: "Respeito à diferença", texto: "Acolher modos diversos de pensar, sentir e funcionar, incluindo a neurodivergência." },
   { titulo: "Compromisso coletivo", texto: "Entender a saúde mental também como questão social, compartilhada." },
 ];
 
@@ -87,15 +87,20 @@ function Sobre() {
         <div className="space-y-6 text-lg md:col-span-6 md:col-start-7">
           <p className="eyebrow text-terracotta">Apresentação</p>
           <p className="font-display text-3xl leading-snug">
-            <Editable text="[Frase de apresentação pessoal, na voz da Mariana — a preencher]" />
+            <Editable text="Sou a Mariana, psicóloga, leitora, escritora, neurodivergente, mãe de duas gatas, de muitas plantas e alguém bastante curiosa sobre as pessoas, suas histórias e as diferentes formas de estar no mundo." />
           </p>
           <p className="text-muted-foreground">
-            <Editable text="[Parágrafo sobre como chegou à psicologia e o que move o seu trabalho — a preencher]" />
+            <Editable text="Gosto de aprender, de fazer perguntas, escutar histórias e de encontrar conexões entre a psicologia e a vida como ela acontece, para além das paredes do consultório." />
           </p>
           <p className="text-muted-foreground">
-            <Editable text="[Parágrafo sobre a atuação atual: clínica, acompanhamento TDAH e projetos — a preencher]" />
+            <Editable text="Minha trajetória até a psicologia passou por diferentes experiências, especialmente na educação, e foi me aproximando cada vez mais das perguntas que hoje orientam meu trabalho: como as pessoas se desenvolvem, se relacionam consigo mesmas e com o mundo? Como suas histórias, seus contextos e as condições em que vivem atravessam a maneira como pensam, sentem e agem?" />
           </p>
-
+          <p className="text-muted-foreground">
+            <Editable text=" Acredito que compreender alguém exige olhar para além do indivíduo, considerando também suas relações, sua história e o contexto social em que está inserido. É esse olhar, atento às singularidades e às diferenças, que procuro levar para tudo o que faço." />
+          </p>
+          <p className="text-muted-foreground">
+            <Editable text="Atualmente, meu trabalho se divide entre a psicoterapia individual, o acompanhamento de pessoas com TDAH e o desenvolvimento de projetos que levam a psicologia para outros espaços. Tenho um interesse especial pela saúde mental de mulheres, pela neurodivergência e pelas possibilidades de construir formas mais sustentáveis de viver, trabalhar e se relacionar." />
+          </p>
           <div className="space-y-14 pt-12">
             {/* <Timeline title="Formação acadêmica" items={formacao} />
             <Timeline title="Experiência profissional" items={experiencia} /> */}
@@ -111,10 +116,10 @@ function Sobre() {
           </div>
           <div className="space-y-5 text-lg text-muted-foreground md:col-span-6 md:col-start-7">
             <p>
-              <Editable text="[Referencial teórico e abordagem clínica — a preencher]" />
+              <Editable text="Minha prática clínica tem como principal referencial a Terapia Cognitivo-Comportamental (TCC), mas meu olhar não se limita a uma abordagem. Também sou atravessada por estudos sobre Terapia Focada na Compaixão e Terapias Contextuais, especialmente a Terapia de Aceitação e Compromisso (ACT). Acredito que compreender uma pessoa exige olhar para além de sua história individual: classe social, racismo, misoginia, machismo, homofobia e outras formas de desigualdade também atravessam nossas experiências e nosso sofrimento. Afinal, ninguém existe fora de seu contexto social." />
             </p>
             <p>
-              <Editable text="[Como essa abordagem se traduz na prática do consultório — a preencher]" />
+              <Editable text="Na prática, isso significa que não trabalho com fórmulas prontas. A gente constrói o caminho em conjunto, considerando sua história, suas necessidades, seus recursos e as condições concretas em que sua vida acontece. Busco construir um espaço de acolhimento e investigação, onde seja possível compreender padrões, experimentar novas estratégias, desenvolver ferramentas que façam sentido no cotidiano e te aproximar de uma vida com mais sentido, tudo isso respeitando seu tempo, suas possibilidades e seus limites." />
             </p>
           </div>
 
@@ -138,11 +143,17 @@ function Sobre() {
         <div className="space-y-5 text-lg text-muted-foreground md:col-span-6 md:col-start-7">
           <p>
             Penso a psicologia em diálogo com outras áreas: a literatura, a educação, a vida em
-            comunidade. Esse olhar mais amplo atravessa tanto a clínica quanto os projetos coletivos.
+            comunidade e também as questões ambientais. Esse olhar mais amplo atravessa tanto a clínica quanto os projetos coletivos porque dialoga profundamente com a minha visão de mundo.
           </p>
           <p>
-            <Editable text="[Interesses, temas de estudo e referências que inspiram o trabalho — a preencher]" />
+            Tenho um interesse especial por temas como neurodivergência, ansiedade climática, saúde mental, mindfulness e as diferentes formas de compreender nossa relação com nós mesmos, com as outras pessoas e com o mundo. 
           </p>
+          <p>
+            Fora dos estudos sobre psicologia, a literatura é uma das minhas grandes companheiras. Gosto especialmente de Eduardo Galeano, Haruki Murakami e Mariana Salomão Carrara. Também sou uma grande viciada em filmes, principalmente de terror, e séries, e tenho uma relação de longa data com a meditação e a atenção plena. Pema Chödrön é uma dessas referências às quais sempre gosto de voltar. São interesses que, de diferentes maneiras, alimentam minha curiosidade e atravessam tanto minha vida quanto meu trabalho.
+          </p>
+          {/* <p>
+            <Editable text="[Interesses, temas de estudo e referências que inspiram o trabalho — a preencher]" />
+          </p> */}
         </div>
       </section>
 
