@@ -15,13 +15,13 @@ export const site = {
   name: "Mariana Helou",
   role: "Psicologia",
   tagline: "Psicóloga clínica",
-  crp: "[CRP 00/00000 — a preencher]",
-  location: "[Cidade, Estado — a preencher]",
+  crp: "CRP 01/22012",
+  location: "Brasília, DF",
   contact: [
-    { id: "whatsapp", label: "WhatsApp", value: "[número a definir]", href: null },
-    { id: "email", label: "E-mail", value: "[e-mail a definir]", href: null },
-    { id: "instagram", label: "Instagram", value: "[@perfil a definir]", href: null },
-    { id: "linkedin", label: "LinkedIn", value: "[perfil a definir]", href: null },
+    { id: "whatsapp", label: "WhatsApp", value: "(61) 99410-4774", href: null }
+    // { id: "email", label: "E-mail", value: "[e-mail a definir]", href: null },
+    // { id: "instagram", label: "Instagram", value: "@mari.helou", href: null }
+    // { id: "linkedin", label: "LinkedIn", value: "[perfil a definir]", href: null },
   ] satisfies ContactChannel[],
 };
 
