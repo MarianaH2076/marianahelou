@@ -87,10 +87,42 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Psicoterapia individual, acompanhamento para pessoas com TDAH e projetos coletivos em psicologia e saúde mental.",
       },
       { name: "author", content: "Mariana Helou" },
-      { property: "og:site_name", content: "Mariana Helou | Psicologia" },
-      { property: "og:locale", content: "pt_BR" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
+      // { property: "og:site_name", content: "Mariana Helou | Psicologia" },
+      // { property: "og:locale", content: "pt_BR" },
+      // { property: "og:type", content: "website" },
+      // { name: "twitter:card", content: "summary_large_image" },
+
+        { property: "og:site_name", content: "Mariana Helou | Psicologia" },
+        { property: "og:locale", content: "pt_BR" },
+        { property: "og:type", content: "website" },
+        { property: "og:title", content: "Mariana Helou | Psicóloga" },
+        {
+          property: "og:description",
+          content: "Psicoterapia individual, acompanhamento para pessoas com TDAH e projetos coletivos em psicologia e saúde mental.",
+        },
+        {
+          property: "og:image",
+          content: "https://marianahelou.com.br/og-mariana-helou.jpg",
+        },
+        {
+          property: "og:image:width",
+          content: "1200",
+        },
+        {
+          property: "og:image:height",
+          content: "630",
+        },
+        { property: "og:url", content: "https://marianahelou.com.br/" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "Mariana Helou | Psicóloga" },
+        {
+          name: "twitter:description",
+          content: "Psicoterapia individual, acompanhamento para pessoas com TDAH e projetos coletivos em psicologia e saúde mental.",
+        },
+        {
+          name: "twitter:image",
+          content: "https://marianahelou.com.br/og-mariana-helou.jpg",
+        },
     ],
     links: [
       {
